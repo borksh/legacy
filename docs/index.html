@@ -1,0 +1,21 @@
+---
+layout: default
+title: Legacy assertion types
+---
+
+<h1>Legacy assertion types</h1>
+
+<p>Here is an index of <strong>officially deprecated</strong> Bork assertion types and documentation on how to use them. These <strong>do not ship with</strong> Bork, and are only available from the <a href="https://github.com/borksh/legacy">borksh/legacy</a> repository.</p>
+
+<p>Please note that legacy types are not routinely maintained by Bork's core maintainers. Pull requests are welcome on the <a href="https://github.com/borksh/legacy">borksh/legacy</a> repository, but there are <strong>no guarantees</strong> that the types below will work, or will not have bugs or security vulnerabilities. Generally speaking, a type makes it into the legacy repository if the upstream utility to which it corresponds is deprecated or otherwise no longer recommended for use.</p>
+
+<ul>
+	{% for type in site.types %}
+		<li><a href="#type-{{ type.name }}">{{ type.name }}</a></li>
+	{% endfor %}
+</ul>
+
+{% for type in site.types %}
+	<h2 id="type-{{ type.name }}">{{ type.name }}</h2>
+	{{ type.content }}
+{% endfor %}

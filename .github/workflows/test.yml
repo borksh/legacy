@@ -1,0 +1,40 @@
+name: Test
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    steps:
+    - name: Checkout Bork
+      uses: actions/checkout@v2
+      with:
+        repository: borksh/bork
+        path: bork
+    - name: Checkout Legacy
+      uses: actions/checkout@v2
+      with:
+        path: legacy
+    - name: Set up Bork to test only legacy code
+      run: |
+        mv bork/test/helpers.sh legacy/test/
+        rm -r bork/test/ bork/types/
+        mv legacy/test/ bork/
+        mv legacy/types/ bork/
+        rm -r legacy/
+    - name: Install bats
+      run: |
+        brew unlink bats || true
+        brew install --force bats-core
+    - name: Check bash version
+      run: bash --version
+      shell: bash
+    - name: Run bats test
+      run: |
+        cd bork/
+        bats --tap test
+      shell: bash
