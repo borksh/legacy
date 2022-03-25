@@ -1,6 +1,7 @@
 # Bork legacy assertion types
 
 ![Test status](https://github.com/borksh/legacy/workflows/Test/badge.svg)
+![FreeBSD test status](https://img.shields.io/cirrus/github/borksh/legacy?label=FreeBSD&logo=freebsd)
 
 Here is an index of **officially deprecated** Bork assertion types and
 documentation on how to use them. These **do not ship with** Bork, and are only
