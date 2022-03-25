@@ -2,10 +2,10 @@ freebsd_instance:
   image_family: freebsd-13-0
 
 task:
+  install_script: pkg install -y git bash base64 bats-core
   clone_script: |
-    go-git checkout https://github.com/borksh/bork bork
-    go-git checkout https://github.com/borksh/legacy legacy
-  install_script: pkg install -y bash base64 bats-core
+    git checkout https://github.com/borksh/bork bork
+    git checkout https://github.com/borksh/legacy legacy
   setup_script: |
     mv bork/test/helpers.sh legacy/test/
     rm -r bork/test/ bork/types/
