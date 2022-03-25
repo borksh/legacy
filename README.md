@@ -13,9 +13,26 @@ or security vulnerabilities. Generally speaking, a type makes it into the legacy
 repository if the upstream utility to which it corresponds is deprecated or
 otherwise no longer recommended for use.
 
+## How to use these types
+
+This repository is structured identically to the
+[main Bork repository](https://github.com/borksh/bork), meaning you can 'drop
+in' the legacy types over the top of an existing Bork installation (which is
+roughly how the tests are done in CI). If you don't want to do this, you can
+simply download the type files you are interested in from the [types/](types/)
+directory, and register them with Bork as though they were custom types like so:
+
+```bash
+register pipsi.sh
+```
+
+You can then use them in your scripts exactly like any other Bork assertion.
+
 ## Contributing
 
-Please see the [contributors' guide](CONTRIBUTING.md) for further information about this repository, but in short, the usual rules of contributing to GitHub repositories apply:
+Please see the [contributors' guide](CONTRIBUTING.md) for further information
+about this repository, but in short, the usual rules of contributing to GitHub
+repositories apply:
 
 1. Fork it
 2. Create your feature branch: `git checkout -b feature/my-new-feature`
