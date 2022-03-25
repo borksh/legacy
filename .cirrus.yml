@@ -3,8 +3,8 @@ freebsd_instance:
 
 task:
   clone_script: |
-    git checkout https://github.com/borksh/bork bork
-    git checkout https://github.com/borksh/legacy legacy
+    go-git checkout https://github.com/borksh/bork bork
+    go-git checkout https://github.com/borksh/legacy legacy
   install_script: pkg install -y bash base64 bats-core
   setup_script: |
     mv bork/test/helpers.sh legacy/test/
