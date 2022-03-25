@@ -4,8 +4,8 @@ freebsd_instance:
 task:
   install_script: pkg install -y git bash base64 bats-core
   clone_script: |
-    git checkout https://github.com/borksh/bork bork
-    git checkout https://github.com/borksh/legacy legacy
+    git clone https://github.com/borksh/bork bork
+    git clone https://github.com/borksh/legacy legacy
   setup_script: |
     mv bork/test/helpers.sh legacy/test/
     rm -r bork/test/ bork/types/
