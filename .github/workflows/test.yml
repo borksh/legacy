@@ -30,11 +30,8 @@ jobs:
       run: |
         brew unlink bats || true
         brew install --force bats-core
-    - name: Check bash version
-      run: bash --version
-      shell: bash
     - name: Run bats test
       run: |
         cd bork/
-        bats --tap test
+        make ci
       shell: bash

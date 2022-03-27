@@ -14,4 +14,4 @@ task:
     rm -r legacy/
   script: |
     cd bork
-    /usr/local/bin/bash -c "bats --tap test"
+    /usr/local/bin/bash -c "make ci"
